@@ -1,0 +1,94 @@
+/* Highlighting rules for nav menu items */
+li.link-active a,
+li.link-active a:hover,
+li.link-active a:focus {
+	background-color: #4189C7;
+	color: white;
+}
+
+.header-toolbar {
+	position: absolute;
+	right: 1rem;
+	top: 9px;
+	width: auto;
+	float: right;
+}
+
+	/deep/.header-toolbar .navbar-nav {
+		flex-direction: row;
+	}
+
+	/deep/ .header-toolbar a {
+		cursor: pointer;
+	}
+
+	/deep/ .header-toolbar .nav-link {
+		padding: 5px 9px 3px 9px;
+		display: inline-block;
+	}
+
+		/deep/ .header-toolbar .nav-link i {
+			font-size: 20px;
+		}
+
+.navbar-text {
+	margin-right: 9px;
+}
+
+/deep/ .header-toolbar li.nav-item.dropdown.show > a {
+	background: white;
+	color: #1d1e1f !important;
+}
+
+/deep/ .header-toolbar .show:not(.header-toolbar-item) > .dropdown-menu {
+	margin-top: -3px;
+	margin-left: -1px;
+	border-radius: 0 .25rem .25rem .25rem;
+}
+
+/deep/ .header-toolbar .show.header-toolbar-item > .dropdown-menu {
+	margin-top: -1px;
+	margin-right: -1px;
+	border-radius: .25rem 0 .25rem .25rem;
+}
+
+@media (max-width: 767px) {
+	.header-toolbar {
+		right: 5rem;
+		top: 8px;
+	}
+
+	/deep/ .header-toolbar-item .dropdown-menu {
+		position: absolute !important;
+	}
+}
+
+@media (min-width: 768px) {
+	/deep/ li.nav-item.dropdown.show > a {
+		background: white;
+		color: #1d1e1f !important;
+	}
+
+	/deep/ .show:not(.header-toolbar-item) > .dropdown-menu {
+		margin-top: -3px;
+		margin-left: -1px;
+		border-radius: 0 .25rem .25rem .25rem;
+	}
+
+	/deep/ .show.header-toolbar-item > .dropdown-menu {
+		margin-top: -1px;
+		margin-right: -1px;
+		border-radius: .25rem 0 .25rem .25rem;
+	}
+}
+
+@media (max-width: 400px) {
+	.header-toolbar {
+		right: 1rem;
+		top: 3rem;
+	}
+
+	.navbar-brand {
+		height: 79px;
+	}
+}
