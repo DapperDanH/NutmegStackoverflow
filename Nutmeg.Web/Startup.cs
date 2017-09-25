@@ -33,19 +33,13 @@ namespace Nutmeg_Web
 			services.AddIdentity<User, AppRole>()
 				.AddEntityFrameworkStores<NutmegContext>()
 				.AddDefaultTokenProviders();
-
-			//services.AddAuthentication("NutmegSecurityScheme")
-			//		.AddCookie("NutmegSecurityScheme", options =>
-			//		{
-			//			options.SlidingExpiration = true;
-			//			options.ExpireTimeSpan = new TimeSpan(24, 0, 0);
-			//			options.AccessDeniedPath = new PathString("/Security/Access");
-			//			options.LoginPath = new PathString("/Security/Login");
-			//		});
-
 			// Add application services.
 			services.AddTransient<IEmailSender, EmailSender>();
-
+			//services.AddAuthentication("NutmegScheme")
+			//	.AddCookie(options => {
+			//		options.AccessDeniedPath = "/Account/Forbidden/";
+			//		options.LoginPath = "/Account/Unauthorized/";
+			//	});
 			services.AddMvc();
         }
 

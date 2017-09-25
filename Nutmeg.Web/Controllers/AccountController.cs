@@ -16,8 +16,8 @@ using Nutmeg.Services;
 
 namespace Nutmeg.Controllers
 {
-    //[Authorize]
-    [Route("[controller]/[action]")]
+	[Authorize]
+	[Route("[controller]/[action]")]
     public class AccountController : Controller
     {
         private readonly UserManager<User> _userManager;
@@ -65,7 +65,9 @@ namespace Nutmeg.Controllers
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return RedirectToLocal(returnUrl);
+					var u = await _userManager.FindByEmailAsync(model.Email);
+					var u_Id = u.Id;
+					return RedirectToLocal(returnUrl);
                 }
                 if (result.RequiresTwoFactor)
                 {

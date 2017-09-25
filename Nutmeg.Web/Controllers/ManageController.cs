@@ -16,8 +16,8 @@ using Nutmeg.Services;
 
 namespace Nutmeg.Controllers
 {
-    //[Authorize]
-    [Route("[controller]/[action]")]
+	[Authorize]
+	[Route("[controller]/[action]")]
     public class ManageController : Controller
     {
         private readonly UserManager<User> _userManager;

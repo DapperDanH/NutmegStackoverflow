@@ -71,7 +71,7 @@ namespace Nutmeg.Data
 					.IsRequired()
 					.HasMaxLength(6);
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -129,7 +129,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).HasDefaultValueSql("newid()");
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.User)
 					.WithMany(p => p.AppNotification)
@@ -156,7 +156,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -193,7 +193,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.Action)
 					.WithMany(p => p.ChallengeAction)
@@ -231,7 +231,7 @@ namespace Nutmeg.Data
 					.IsRequired()
 					.HasMaxLength(500);
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.LockedIconUrl)
 					.IsRequired()
@@ -264,7 +264,7 @@ namespace Nutmeg.Data
 					.ValueGeneratedNever();
 
 				entity.Property(e => e.IndexId)
-					.ValueGeneratedOnAdd();
+					.ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -313,7 +313,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -367,7 +367,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -416,7 +416,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).HasDefaultValueSql("newid()");
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -453,7 +453,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).HasDefaultValueSql("newid()");
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.Group)
 					.WithMany(p => p.GroupRole)
@@ -484,7 +484,7 @@ namespace Nutmeg.Data
 					.IsRequired()
 					.HasMaxLength(200);
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.SourceName)
 					.IsRequired()
@@ -509,7 +509,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.FileData).IsRequired();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.LogFile)
 					.WithOne(p => p.LogFileData)
@@ -533,7 +533,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).HasDefaultValueSql("newid()");
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.User)
 					.WithMany(p => p.NotificationSubscription)
@@ -560,7 +560,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -616,7 +616,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -669,7 +669,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).HasDefaultValueSql("newid()");
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -709,7 +709,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -759,7 +759,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.EmailAddress).HasMaxLength(500);
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.Property(e => e.Name)
 					.IsRequired()
@@ -784,7 +784,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.Action)
 					.WithMany(p => p.UserAction)
@@ -820,7 +820,7 @@ namespace Nutmeg.Data
 
 				entity.Property(e => e.Id).ValueGeneratedNever();
 
-				entity.Property(e => e.IndexId).ValueGeneratedOnAdd();
+				entity.Property(e => e.IndexId).ValueGeneratedOnAddOrUpdate();
 
 				entity.HasOne(d => d.Challenge)
 					.WithMany(p => p.UserChallenge)
